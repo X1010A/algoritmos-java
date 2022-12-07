@@ -39,13 +39,17 @@ public class Cesar
         }     
         return respuesta;
         }
-        
+    /**
+     * alfabeto = {a,b,c,d,p,r,s,t, ,0,2}
+     * AbraCadrabaPatasDCabra 2020
+     * dp drds dpdtd2d0srdp dacbcb   
+    
     private String replaceAlfabeto(String otro){
         String aux = "";
-        
+      
         for(int i = 0; i< alfabeto.length; i++){
             if(otro.compareToIgnoreCase(alfabeto[i]) == 0){
-                if(i+rotacion >= alfabeto.length){
+                if(i+rotacion > alfabeto.length){                   
                     i = 0;
                 }
                 aux += alfabeto[i+rotacion];
@@ -53,5 +57,27 @@ public class Cesar
         }
         return aux;
     }
+    **/
+    private String replaceAlfabeto(String otro){
+        String aux = "";
+        boolean bandera = true;
+        int i = 0;
+        while(bandera){
+           
+            if(otro.compareToIgnoreCase(alfabeto[i]) == 0){
+                if(i+rotacion >= alfabeto.length && i+rotacion <= alfabeto.length -2 ){                   
+                    i = 0;
+                }
+                
+                
+                aux += alfabeto[i+rotacion];
+                    bandera = false;
+                
+            }
+             i++;
+        }
+        return aux;
+    }
+    
     }
     
